@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستعرض الذكي | العاشر ب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; overflow: hidden; }
+        .pdf-frame { height: calc(100vh - 70px); width: 100%; border: none; border-radius: 20px 20px 0 0; background: #fff; }
+        .loader { border-top-color: #10b981; animation: spinner 1.5s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="h-screen flex flex-col">
+
+    <header class="h-[70px] px-6 flex justify-between items-center bg-white shadow-sm z-10">
+        <div class="flex items-center gap-4">
+            <a href="javascript:history.back()" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <i class="fas fa-arrow-right text-slate-600"></i>
+            </a>
+            <div>
+                <h1 id="subject-title" class="font-black text-slate-800 text-lg md:text-xl">جاري التحميل...</h1>
+                <p id="subject-desc" class="text-xs text-slate-400 font-medium"></p>
+            </div>
+        </div>
+        <div id="action-btn">
+            </div>
+    </header>
+
+    <main class="flex-grow relative">
+        <div id="loading-screen" class="absolute inset-0 flex items-center justify-center bg-slate-50 z-0">
+            <div class="loader ease-linear rounded-full border-4 border-t-4 border-slate-200 h-12 w-12"></div>
+        </div>
+        <iframe id="pdf-viewer" class="pdf-frame relative z-10" src="" allow="autoplay"></iframe>
+    </main>
+
+    <script>
+        // 1. Data Mapping (Add your Drive IDs here)
+        const database = {
+    'islamic': { title: 'التربية الإسلامية', fileId: '1oshzleEvfjkqU3Qlb3Fk2CHTAQmQCkxB' },
+    'arabic':  { title: 'اللغة العربية', fileId: '1xfj55tQ5EX2-xm4a09jVSQteXJx7hgSo' },
+    'english': { title: 'اللغة الإنجليزية', fileId: '1u276x0HRmZse6sacIYBksUkeiA_WSJ9o' },
+    'palestine': { title: 'جغرافية فلسطين وتاريخها', fileId: '1AHQC-L-3MLz4IRJsWt5o3p0Ede7XXmHv' },
+    'math':    { title: 'الرياضيات', fileId: 'ش' },
+    'physics': { title: 'الفيزياء', fileId: '1xiWY70J7k7KkAyugLCsSZ31q0VGoGeHo' },
+    'chem':    { title: 'الكيمياء', fileId: '' },
+    'bio':     { title: 'الأحياء', fileId: '1wNerg3-HgiYMVD_JSCfmzzU-KIWXlqwL' },
+    'tech':    { title: 'التكنولوجيا', fileId: '1_jG-H7ihWGsC2HXBh3VZnvuRMx8sV07X' }
+};
+
+        // 2. Logic to grab ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const subjectId = urlParams.get('id');
+        const data = database[subjectId];
+
+        if (data) {
+            document.getElementById('subject-title').innerText = data.title;
+            document.getElementById('subject-desc').innerText = data.desc;
+            document.getElementById('pdf-viewer').src = `https://drive.google.com/file/d/${data.fileId}/preview`;
+            document.getElementById('action-btn').innerHTML = `
+                <a href="https://drive.google.com/file/d/${data.fileId}/view" target="_blank" class="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-bold shadow-lg shadow-emerald-100 hover:bg-emerald-700 transition-all">
+                    تحميل PDF
+                </a>`;
+        } else {
+            document.getElementById('subject-title').innerText = "خطأ في التحميل";
+            document.getElementById('subject-desc').innerText = "لم يتم العثور على الملف المطلوب.";
+        }
+
+        // Hide loader after iframe loads
+        document.getElementById('pdf-viewer').onload = function() {
+            document.getElementById('loading-screen').style.display = 'none';
+        };
+    </script>
+</body>
+</html>

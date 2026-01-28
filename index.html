@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اللجنة العلمية | العاشر ب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        
+        .glass-light {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 1);
+            border-radius: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        /* ستايل الناف بار العائم */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+        }
+        
+        /* تأثير التمرير السلس */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* تعديل الهيدر ليعطي مساحة للناف بار الثابت */
+        header {
+            padding-top: 120px !important;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #0284c7, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-soft-gradient {
+            background: radial-gradient(circle at top right, #e0f2fe, #f8fafc);
+        }
+        .active-day {
+            background-color: #0284c7 !important;
+            color: white !important;
+            border-color: #0284c7 !important;
+            box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+        }
+        /* تحسين خطوط الجدول */
+    .table-text-main {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+    }
+    .table-text-sub {
+        font-weight: 500;
+        color: #475569;
+        font-size: 0.95rem;
+    }
+    /* لمسة جمالية للحصص */
+    .class-cell {
+        transition: all 0.2s ease;
+    }
+    .class-cell:hover {
+        color: #0284c7;
+        transform: scale(1.05);
+    }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .day-card { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="min-h-screen bg-soft-gradient">
+
+    <nav class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="glass-nav px-5 py-3 flex justify-between items-center border border-white/30 shadow-xl">
+            
+            <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-sky-400/20 blur-lg rounded-full scale-0 group-hover:scale-110 transition duration-300"></div>
+                    <img src="logo.png" alt="اللجنة العلمية" class="relative w-12 h-12 md:w-14 md:h-14 object-contain transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-xl font-extrabold text-slate-800 leading-none tracking-tighter">
+                        اللجنة <span class="text-sky-600">العلمية</span>
+                    </span>
+                    <span class="text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">الصف العاشر ب</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center bg-slate-50/50 p-1.5 rounded-2xl border border-slate-100">
+                <a href="#" class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">الرئيسية</a>
+                <a href="#subjects" class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">المكتبة</a>
+                <a href="#schedule" class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">الجدول</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <a href="https://wa.me/yourlink" class="hidden sm:flex bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all hover:bg-sky-600 hover:-translate-y-0.5 shadow-lg active:scale-95">
+                    تواصل معنا
+                </a>
+                
+                <button class="md:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-slate-50 text-slate-800 border border-slate-200" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-4 right-4 mt-3 p-4 glass-light border border-slate-100 shadow-2xl rounded-3xl md:hidden overflow-hidden transform transition-all duration-300">
+            <div class="flex flex-col gap-1">
+                <a href="#" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3" onclick="toggleMobileMenu()">
+                    <i class="fas fa-home text-sky-600"></i> الرئيسية
+                </a>
+                <a href="#subjects" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3" onclick="toggleMobileMenu()">
+                    <i class="fas fa-book text-sky-600"></i> المكتبة العلمية
+                </a>
+                <a href="#schedule" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3" onclick="toggleMobileMenu()">
+                    <i class="fas fa-calendar-alt text-sky-600"></i> جدول الحصص
+                </a>
+                <hr class="my-2 border-slate-100">
+                <a href="https://wa.me/yourlink" class="p-4 font-bold text-sky-600 bg-sky-50 rounded-2xl text-center" onclick="toggleMobileMenu()">
+                    تواصل معنا الآن
+                </a>
+            </div>
+        </div>
+    </nav>
+    <header class="max-w-7xl mx-auto px-8 pt-32 pb-16 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-12">
+        
+        <div class="md:w-1/2 order-1 md:order-1" data-aos="fade-left">
+            <span class="bg-sky-50 text-sky-700 px-4 py-1.5 rounded-full text-xs font-black mb-6 inline-block border border-sky-100 italic shadow-sm">
+                مرحباً بكم في مجتمع العاشر (ب) الأكاديمي
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-slate-900 tracking-tight">
+                نحو قمة <br><span class="gradient-text">التميز العلمي</span>
+            </h1>
+            <p class="text-slate-500 text-lg mb-10 max-w-lg leading-relaxed font-medium">
+                المنصة الرسمية المخصصة لتنظيم المحتوى التعليمي، الحلول النموذجية، وتلخيصات الكتب لطلابنا الأعزاء.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#subjects" class="px-8 py-4 bg-sky-600 text-white font-bold rounded-2xl hover:bg-sky-700 hover:-translate-y-1 transition-all shadow-xl shadow-sky-600/30">
+                    تصفح المكتبة
+                </a>
+                <a href="#schedule" class="px-8 py-4 bg-white border-2 border-slate-100 text-slate-700 rounded-2xl font-bold hover:bg-slate-50 hover:border-slate-200 transition-all shadow-sm">
+                    جدول الحصص
+                </a>
+            </div>
+        </div>
+        
+        <div class="md:w-1/2 flex justify-center md:justify-end order-2 md:order-2" data-aos="zoom-in">
+            <div class="relative">
+                <div class="absolute inset-0 bg-sky-200/20 blur-3xl rounded-full scale-110"></div>
+                <img src="asia-event.jpeg" 
+                     alt="Education Illustration" 
+                     class="relative z-10 w-full max-w-[380px] md:max-w-[480px] h-auto drop-shadow-2xl">
+            </div>
+        </div>
+
+    </header>
+
+    <section id="subjects" class="max-w-7xl mx-auto px-8 py-20">
+    <div class="mb-12 text-center md:text-right" data-aos="fade-up">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2">المكتبة العلمية</h2>
+        <div class="h-1.5 w-24 bg-sky-500 rounded-full mb-4 mx-auto md:mx-0"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-light p-8 group hover:shadow-2xl transition-all flex flex-col justify-between" data-aos="fade-up">
+            <div>
+                <div class="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-archive text-3xl text-sky-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-800">الخزانة العلمية</h3>
+                <p class="text-slate-500 text-sm mb-6 leading-relaxed">المستودع الرقمي لجميع تلخيصات الحصص والمراجعات النهائية.</p>
+            </div>
+            <a href="khazana.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sky-600 text-white font-bold rounded-xl hover:bg-sky-700 transition-all active:scale-95 shadow-lg shadow-sky-600/20">
+                تصفح الملخصات
+                <i class="fas fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+
+        <div class="glass-light p-8 group hover:shadow-2xl transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+                <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-check-double text-3xl text-emerald-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-800">حلول+</h3>
+                <p class="text-slate-500 text-sm mb-6 leading-relaxed">إجابات نموذجية دقيقة لجميع الواجبات المدرسية وأسئلة الكتاب.</p>
+            </div>
+            <a href="holoul.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/20">
+                مشاهدة الحلول
+                <i class="fas fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+
+        <div class="glass-light p-8 group hover:shadow-2xl transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+                <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-highlighter text-3xl text-amber-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-800">محتوى+</h3>
+                <p class="text-slate-500 text-sm mb-6 leading-relaxed">نسخ الكتب المدرسية مع تظليل أهم النقاط لضمان تركيزك.</p>
+            </div>
+            <a href="mohtawa.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-700 transition-all active:scale-95 shadow-lg shadow-amber-600/20">
+                تصفح الكتب
+                <i class="fas fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <section id="schedule" class="max-w-7xl mx-auto px-4 md:px-8 py-20 my-10 bg-white/50 border-y border-slate-100">
+        <div class="mb-12 text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-slate-800 mb-2">الجدول الدراسي</h2>
+            <p class="text-slate-500 font-medium italic">الصف العاشر (ب) - الأسبوع الدراسي</p>
+        </div>
+
+        <div class="flex overflow-x-auto pb-4 gap-2 no-scrollbar md:hidden px-2" id="day-tabs">
+            <button onclick="showDay('الأحد')" class="day-btn active-day px-8 py-3 rounded-2xl font-bold transition-all whitespace-nowrap border-2 border-slate-200 shrink-0 shadow-sm">الأحد</button>
+            <button onclick="showDay('الإثنين')" class="day-btn px-8 py-3 rounded-2xl font-bold transition-all whitespace-nowrap border-2 border-slate-200 bg-white shrink-0">الإثنين</button>
+            <button onclick="showDay('الثلاثاء')" class="day-btn px-8 py-3 rounded-2xl font-bold transition-all whitespace-nowrap border-2 border-slate-200 bg-white shrink-0">الثلاثاء</button>
+            <button onclick="showDay('الأربعاء')" class="day-btn px-8 py-3 rounded-2xl font-bold transition-all whitespace-nowrap border-2 border-slate-200 bg-white shrink-0">الأربعاء</button>
+            <button onclick="showDay('الخميس')" class="day-btn px-8 py-3 rounded-2xl font-bold transition-all whitespace-nowrap border-2 border-slate-200 bg-white shrink-0">الخميس</button>
+        </div>
+
+        <div class="md:hidden mt-4" id="mobile-schedule-container"></div>
+
+        <div class="hidden md:block bg-white border-2 border-slate-200 rounded-[32px] overflow-hidden shadow-sm" data-aos="zoom-in">
+            <table class="w-full text-right border-collapse">
+                <thead class="bg-slate-800 text-white">
+                    <tr>
+                        <th class="p-5 border-l border-slate-700">اليوم</th>
+                        <th class="p-5 border-l border-slate-700 text-center font-bold">1</th>
+                        <th class="p-5 border-l border-slate-700 text-center font-bold">2</th>
+                        <th class="p-5 border-l border-slate-700 text-center font-bold">3</th>
+                        <th class="p-5 bg-orange-500 text-center font-black">الاستراحة</th>
+                        <th class="p-5 border-l border-slate-700 text-center font-bold">4</th>
+                        <th class="p-5 border-l border-slate-700 text-center font-bold">5</th>
+                        <th class="p-5 border-l border-slate-700 text-center font-bold">6</th>
+                        <th class="p-5 text-center font-bold">7</th>
+                    </tr>
+                </thead>
+                <tbody id="desktop-table-body" class="text-slate-700 font-bold italic"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-24 border-t border-slate-100">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+            
+            <div class="md:w-1/3 flex justify-center" data-aos="fade-left">
+                <div class="md:w-1/3 flex justify-center" data-aos="fade-left">
+    <div class="relative group">
+        <div class="absolute -inset-8 bg-sky-400/10 rounded-full blur-3xl group-hover:bg-sky-400/20 transition duration-500"></div>
+        
+        <div class="relative w-56 h-56 bg-white border border-slate-100 rounded-[3rem] flex items-center justify-center shadow-2xl p-6 transform group-hover:scale-105 transition duration-500">
+            <img src="logo.png" alt="Official Logo" class="w-full h-full object-contain">
+        </div>
+    </div>
+</div>
+            </div>
+
+            <div class="md:w-2/3" data-aos="fade-right">
+                <div class="inline-block px-4 py-1.5 bg-sky-50 text-sky-700 rounded-full text-xs font-black tracking-widest uppercase mb-6 border border-sky-100">
+                    رؤيتنا وأهدافنا
+                </div>
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+                    نحن هنا لنصنع <br> <span class="gradient-text">تجربة تعلم استثنائية</span>
+                </h2>
+                <p class="text-slate-500 text-lg mb-8 leading-relaxed max-w-2xl">
+                    تأسست اللجنة العلمية لطلاب العاشر (ب) لتكون جسراً معرفياً يربط الطالب بمصادر تعلمه بكل سهولة، مؤمنين بأن التنظيم هو أولى خطوات التميز الأكاديمي.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-bullseye text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">توفير الوقت</h4>
+                            <p class="text-sm text-slate-400">تجميع كافة الملخصات في مكان واحد لسهولة الوصول.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-sky-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-sky-600/20">
+                            <i class="fas fa-users text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">روح الفريق</h4>
+                            <p class="text-sm text-slate-400">تعزيز التعاون بين الطلاب لمشاركة المعرفة والخبرات.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-sky-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-sky-600/20">
+                            <i class="fas fa-rocket text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">تحفيز التفوق</h4>
+                            <p class="text-sm text-slate-400">تقديم حلول نموذجية تضمن للطالب فهم المادة بعمق.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-start">
+                        <div class="w-10 h-10 shrink-0 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-lightbulb text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">الإبداع الأكاديمي</h4>
+                            <p class="text-sm text-slate-400">تحويل المواد الجافة إلى ملخصات بصرية ممتعة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-24 bg-slate-50/50 rounded-[3rem] mb-20 border border-slate-100">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-sky-600 font-black tracking-widest uppercase text-xs">سجل الفخر</span>
+            <h2 class="text-4xl font-extrabold text-slate-900 mt-2">نبذة عن عمل اللجنة وأهم مشاريعها</h2>
+            <p class="text-slate-500 mt-4 max-w-2xl mx-auto">نفخر في اللجنة العلمية بتنظيم سلسلة من الفعاليات والمسابقات التي تهدف إلى إثراء الحصيلة المعرفية وروح التنافس الشريف بين طلابنا.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="glass-light p-8 hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-globe-asia text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-3">مسابقة اعرف أسيا</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">رحلة معرفية لاستكشاف جغرافيا وثقافات القارة الصفراء وأهم معالمها.</p>
+            </div>
+
+            <div class="glass-light p-8 hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-map-marked-alt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-3">مسابقة المعرفة العربية</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">مسابقة شاملة عن تاريخ وحاضر الوطن العربي من المحيط إلى الخليج.</p>
+            </div>
+
+            <div class="glass-light p-8 hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-font text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-3">مسابقة Verb Tenses</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">تحدي اللغة الإنجليزية لتمكين الطلاب من قواعد الأزمنة بشكل إبداعي.</p>
+            </div>
+
+            <div class="glass-light p-8 hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up">
+                <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-pen-nib text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-3">مسابقة لغتي فخري</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">تعزيز مهارات اللغة العربية والاعتزاز بهويتنا ولغتنا الأم.</p>
+            </div>
+
+            <div class="glass-light p-8 hover:-translate-y-2 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors">
+                    <i class="fas fa-palestine text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-3">مسابقة المعرفة الفلسطينية</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">ترسيخ الوعي بالقضية وتاريخ فلسطين ومدنها وقراها المهجرة.</p>
+            </div>
+
+            <div class="glass-light p-8 hover:-translate-y-2 transition-all duration-300 group border-2 border-sky-200" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 bg-sky-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-sky-600/30">
+                    <i class="fas fa-file-signature text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-3">الامتحان التقييمي (عاشر ب)</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">مبادرة خاصة لتقييم المستوى الأكاديمي وتحديد نقاط القوة لطلاب شعبتنا.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-12 text-center">
+        <div class="text-2xl font-bold text-slate-800 mb-4">اللجنة العلمية <span class="text-sky-600">للعاشر ب</span></div>
+        <p class="text-slate-500 text-sm italic">تم تطوير الموقع بكل فخر لطلابنا &copy; 2026</p>
+    </footer>
+
+    <script>
+        const scheduleData = [
+            { name: "الأحد", classes: ["رياضيات", "أحياء", "E", "BREAK", "فيزياء", "دين", "تاريخ فلسطين", "عربي"] },
+            { name: "الإثنين", classes: ["رياضيات", "تكنولوجيا", "E", "BREAK", "فيزياء", "دين", "تاريخ فلسطين", "عربي"] },
+            { name: "الثلاثاء", classes: ["رياضيات", "E", "فن", "BREAK", "تاريخ فلسطين", "دين", "كيمياء", "عربي"] },
+            { name: "الأربعاء", classes: ["رياضيات", "أحياء", "E", "BREAK", "عربي", "تاريخ فلسطين", "فيزياء", "عربي"] },
+            { name: "الخميس", classes: ["رياضيات", "E", "تكنولوجيا", "BREAK", "تاريخ فلسطين", "عربي", "كيمياء", "رياضة"] }
+        ];
+
+        function showDay(dayName) {
+            document.querySelectorAll('.day-btn').forEach(btn => {
+                btn.classList.remove('active-day');
+                if(btn.innerText === dayName) btn.classList.add('active-day');
+            });
+
+            const container = document.getElementById('mobile-schedule-container');
+            const dayInfo = scheduleData.find(d => d.name === dayName);
+            
+            container.innerHTML = `
+                <div class="day-card p-4 bg-white border-2 border-slate-200 rounded-3xl">
+                    <div class="space-y-3">
+                        ${dayInfo.classes.map((c, i) => {
+                            if(c === "BREAK") return `<div class="bg-orange-50 text-orange-600 py-3 text-center text-[10px] font-black tracking-widest rounded-xl border border-orange-100 uppercase italic">فترة الاستراحة</div>`;
+                            return `<div class="flex items-center border border-slate-100 p-3 rounded-2xl bg-slate-50/50">
+                                <span class="w-8 h-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg text-xs font-black text-slate-400 ml-4">${i > 3 ? i : i+1}</span>
+                                <span class="font-extrabold text-slate-700">${c}</span>
+                            </div>`;
+                        }).join('')}
+                    </div>
+                </div>`;
+        }
+
+       const desktopBody = document.getElementById('desktop-table-body');
+        scheduleData.forEach(day => {
+            desktopBody.innerHTML += `
+                <tr class="border-b border-slate-100 hover:bg-sky-50/30 transition-colors group">
+                    <td class="p-5 bg-slate-50/50 border-l border-slate-200 text-lg font-extrabold text-slate-900 group-hover:text-sky-700 transition-colors">
+                        ${day.name}
+                    </td>
+                    ${day.classes.map((c, i) => {
+                        if(c === "BREAK") {
+                            return `<td class="p-5 bg-orange-50/30 text-center"></td>`;
+                        }
+                        return `
+                            <td class="p-5 border-l border-slate-100 text-center class-cell">
+                                <span class="table-text-sub">${c}</span>
+                            </td>
+                        `;
+                    }).join('')}
+                </tr>`;
+        });
+
+        showDay('الأحد');
+
+        function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        
+        // التحقق من حالة القائمة وتبديلها
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            // إضافة أنيميشن بسيط عند الظهور
+            menu.style.opacity = '0';
+            menu.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                menu.style.transition = 'all 0.3s ease';
+                menu.style.opacity = '1';
+                menu.style.transform = 'translateY(0)';
+            }, 10);
+        } else {
+            menu.style.opacity = '0';
+            menu.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    // إغلاق القائمة تلقائياً عند الضغط على أي رابط بداخلها
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
