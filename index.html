@@ -85,57 +85,101 @@
 </head>
 <body class="min-h-screen bg-soft-gradient">
 
-    <nav class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8 max-w-7xl mx-auto">
-        <div class="glass-nav px-5 py-3 flex justify-between items-center border border-white/30 shadow-xl">
-            
-            <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-sky-400/20 blur-lg rounded-full scale-0 group-hover:scale-110 transition duration-300"></div>
-                    <img src="logo.png" alt="اللجنة العلمية" class="relative w-12 h-12 md:w-14 md:h-14 object-contain transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-lg md:text-xl font-extrabold text-slate-800 leading-none tracking-tighter">
-                        اللجنة <span class="text-sky-600">العلمية</span>
-                    </span>
-                    <span class="text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">الصف العاشر ب</span>
-                </div>
-            </div>
+   <!-- NAVBAR -->
+<nav class="fixed top-3 md:top-4 inset-x-0 z-50 px-3 sm:px-4 md:px-8">
+  <div class="max-w-7xl mx-auto">
 
-            <div class="hidden md:flex items-center bg-slate-50/50 p-1.5 rounded-2xl border border-slate-100">
-                <a href="#" class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">الرئيسية</a>
-                <a href="#subjects" class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">المكتبة</a>
-                <a href="#schedule" class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">الجدول</a>
-            </div>
+    <!-- MAIN BAR -->
+    <div class="glass-nav px-4 sm:px-5 py-3 flex justify-between items-center border border-white/30 shadow-xl rounded-3xl">
 
-            <div class="flex items-center gap-2">
-                <a href="https://wa.me/yourlink" class="hidden sm:flex bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all hover:bg-sky-600 hover:-translate-y-0.5 shadow-lg active:scale-95">
-                    تواصل معنا
-                </a>
-                
-                <button class="md:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-slate-50 text-slate-800 border border-slate-200" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-lg"></i>
-                </button>
-            </div>
+      <!-- LOGO -->
+      <div class="flex items-center gap-3 group cursor-pointer"
+           onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="relative">
+          <div class="absolute inset-0 bg-sky-400/20 blur-lg rounded-full scale-0 group-hover:scale-110 transition duration-300"></div>
+          <img src="logo.png"
+               alt="اللجنة العلمية"
+               class="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain transition-transform duration-300 group-hover:scale-105">
         </div>
 
-        <div id="mobile-menu" class="hidden absolute top-full left-4 right-4 mt-3 p-4 glass-light border border-slate-100 shadow-2xl rounded-3xl md:hidden overflow-hidden transform transition-all duration-300">
-            <div class="flex flex-col gap-1">
-                <a href="#" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3" onclick="toggleMobileMenu()">
-                    <i class="fas fa-home text-sky-600"></i> الرئيسية
-                </a>
-                <a href="#subjects" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3" onclick="toggleMobileMenu()">
-                    <i class="fas fa-book text-sky-600"></i> المكتبة العلمية
-                </a>
-                <a href="#schedule" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3" onclick="toggleMobileMenu()">
-                    <i class="fas fa-calendar-alt text-sky-600"></i> جدول الحصص
-                </a>
-                <hr class="my-2 border-slate-100">
-                <a href="https://wa.me/yourlink" class="p-4 font-bold text-sky-600 bg-sky-50 rounded-2xl text-center" onclick="toggleMobileMenu()">
-                    تواصل معنا الآن
-                </a>
-            </div>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-lg md:text-xl font-extrabold text-slate-800 leading-none tracking-tighter">
+            اللجنة <span class="text-sky-600">العلمية</span>
+          </span>
+          <span class="text-[9px] sm:text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">
+            الصف العاشر ب
+          </span>
         </div>
-    </nav>
+      </div>
+
+      <!-- DESKTOP LINKS -->
+      <div class="hidden md:flex items-center bg-slate-50/60 p-1.5 rounded-2xl border border-slate-100">
+        <a href="#"
+           class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">
+          الرئيسية
+        </a>
+        <a href="#subjects"
+           class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">
+          المكتبة
+        </a>
+        <a href="#schedule"
+           class="px-5 py-2 rounded-xl text-slate-600 font-bold transition-all hover:text-sky-600 hover:bg-white hover:shadow-sm">
+          الجدول
+        </a>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/yourlink"
+           class="hidden sm:flex bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all hover:bg-sky-600 hover:-translate-y-0.5 shadow-lg active:scale-95">
+          تواصل معنا
+        </a>
+
+        <button onclick="toggleMobileMenu()"
+                class="md:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-slate-50 text-slate-800 border border-slate-200 active:scale-95 transition">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu"
+         class="hidden md:hidden absolute top-full inset-x-3 sm:inset-x-4 mt-3 p-4
+                glass-light border border-slate-100 shadow-2xl rounded-3xl
+                transition-all duration-300 origin-top scale-95 opacity-0">
+
+      <div class="flex flex-col gap-1">
+        <a href="#"
+           onclick="toggleMobileMenu()"
+           class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3">
+          <i class="fas fa-home text-sky-600"></i> الرئيسية
+        </a>
+
+        <a href="#subjects"
+           onclick="toggleMobileMenu()"
+           class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3">
+          <i class="fas fa-book text-sky-600"></i> المكتبة العلمية
+        </a>
+
+        <a href="#schedule"
+           onclick="toggleMobileMenu()"
+           class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-2xl flex items-center gap-3">
+          <i class="fas fa-calendar-alt text-sky-600"></i> جدول الحصص
+        </a>
+
+        <hr class="my-2 border-slate-100">
+
+        <a href="https://wa.me/00970597439818"
+           onclick="toggleMobileMenu()"
+           class="p-4 font-bold text-sky-600 bg-sky-50 rounded-2xl text-center">
+          تواصل معنا الآن
+        </a>
+      </div>
+    </div>
+
+  </div>
+</nav>
     <header class="max-w-7xl mx-auto px-8 pt-32 pb-16 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-12">
         
         <div class="md:w-1/2 order-1 md:order-1" data-aos="fade-left">
@@ -446,29 +490,17 @@
         });
 
         showDay('الأحد');
-
-        function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
         
-        // التحقق من حالة القائمة وتبديلها
-        if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-            // إضافة أنيميشن بسيط عند الظهور
-            menu.style.opacity = '0';
-            menu.style.transform = 'translateY(-10px)';
-            setTimeout(() => {
-                menu.style.transition = 'all 0.3s ease';
-                menu.style.opacity = '1';
-                menu.style.transform = 'translateY(0)';
-            }, 10);
-        } else {
-            menu.style.opacity = '0';
-            menu.style.transform = 'translateY(-10px)';
-            setTimeout(() => {
-                menu.classList.add('hidden');
-            }, 300);
-        }
-    }
+
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobile-menu");
+  menu.classList.toggle("hidden");
+  menu.classList.toggle("opacity-0");
+  menu.classList.toggle("scale-95");
+  menu.classList.toggle("opacity-100");
+  menu.classList.toggle("scale-100");
+}
+
 
     // إغلاق القائمة تلقائياً عند الضغط على أي رابط بداخلها
     document.querySelectorAll('#mobile-menu a').forEach(link => {
