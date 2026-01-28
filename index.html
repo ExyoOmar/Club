@@ -2,6 +2,18 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+  /* This prevents the "twitch" by locking the horizontal width */
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-text-size-adjust: 100%; /* Prevents font-size twitch on orientation change */
+  }
+</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اللجنة العلمية | العاشر ب</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -486,3 +498,4 @@ function toggleMobileMenu() {
     <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
+
