@@ -86,57 +86,55 @@
 <body class="min-h-screen bg-soft-gradient">
 
    <!-- NAVBAR -->
-<nav class="fixed top-0 inset-x-0 z-[100] p-3 md:p-4">
-  <div class="max-w-7xl mx-auto w-full">
+<nav class="fixed top-0 inset-x-0 z-[100] p-3 md:p-5 flex justify-center">
+  <div class="w-full max-w-7xl flex flex-col">
     
-    <div class="glass-nav relative px-4 py-3 flex justify-between items-center border border-white/40 shadow-xl rounded-2xl md:rounded-3xl bg-white/70 backdrop-blur-xl">
-
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <img src="logo.png" alt="Logo" class="w-10 h-10 md:w-14 md:h-14 object-contain shrink-0">
-        <div class="flex flex-col min-w-0">
-          <span class="text-sm sm:text-lg md:text-xl font-extrabold text-slate-800 leading-none truncate">
+    <div class="w-full bg-white/80 backdrop-blur-xl border border-slate-200/60 shadow-lg rounded-2xl md:rounded-3xl px-4 py-3 flex items-center justify-between">
+      
+      <div class="flex items-center gap-3 shrink-0 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="logo.png" alt="Logo" class="w-10 h-10 md:w-12 md:h-12 object-contain">
+        <div class="flex flex-col">
+          <span class="text-sm md:text-lg font-extrabold text-slate-800 leading-none">
             اللجنة <span class="text-sky-600">العلمية</span>
           </span>
-          <span class="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase mt-1 tracking-tight">
-            الصف العاشر ب
-          </span>
+          <span class="text-[9px] font-bold text-slate-400 uppercase mt-1">الصف العاشر ب</span>
         </div>
       </div>
 
-      <div class="hidden md:flex items-center bg-slate-100/50 p-1 rounded-2xl border border-slate-200/50">
-        <a href="#" class="px-5 py-2 rounded-xl text-slate-600 font-bold hover:text-sky-600 hover:bg-white transition-all">الرئيسية</a>
-        <a href="#subjects" class="px-5 py-2 rounded-xl text-slate-600 font-bold hover:text-sky-600 hover:bg-white transition-all">المكتبة</a>
-        <a href="#schedule" class="px-5 py-2 rounded-xl text-slate-600 font-bold hover:text-sky-600 hover:bg-white transition-all">الجدول</a>
+      <div class="hidden md:flex items-center bg-slate-100/50 p-1 rounded-2xl gap-1">
+        <a href="#" class="px-5 py-2 rounded-xl text-slate-600 font-bold hover:bg-white hover:text-sky-600 transition-all">الرئيسية</a>
+        <a href="#subjects" class="px-5 py-2 rounded-xl text-slate-600 font-bold hover:bg-white hover:text-sky-600 transition-all">المكتبة</a>
+        <a href="#schedule" class="px-5 py-2 rounded-xl text-slate-600 font-bold hover:bg-white hover:text-sky-600 transition-all">الجدول</a>
       </div>
 
-      <div class="flex items-center gap-2 shrink-0">
-        <a href="https://wa.me/00970597439818" class="hidden sm:flex bg-slate-900 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-sky-600 transition-all">
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/00970597439818" class="hidden sm:flex bg-slate-900 text-white px-5 py-2 rounded-xl text-xs font-bold hover:bg-sky-700 transition-all">
           تواصل معنا
         </a>
-        <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-800 border border-slate-200 shadow-sm active:scale-95 transition-transform">
+        <button id="menu-btn" onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-800 border border-slate-200 active:scale-90 transition-transform">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden mt-2 p-2 bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-2xl rounded-2xl w-full">
-      <div class="flex flex-col">
-        <a href="#" onclick="toggleMobileMenu()" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-xl flex items-center gap-3 transition-colors">
-          <i class="fas fa-home text-sky-600"></i> الرئيسية
+    <div id="mobile-menu" class="hidden w-full bg-white border border-slate-200 shadow-2xl rounded-2xl mt-2 overflow-hidden">
+      <div class="flex flex-col p-2">
+        <a href="#" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-xl">
+          <i class="fas fa-home text-sky-600 w-5"></i> الرئيسية
         </a>
-        <a href="#subjects" onclick="toggleMobileMenu()" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-xl flex items-center gap-3 transition-colors">
-          <i class="fas fa-book text-sky-600"></i> المكتبة العلمية
+        <a href="#subjects" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-xl">
+          <i class="fas fa-book text-sky-600 w-5"></i> المكتبة العلمية
         </a>
-        <a href="#schedule" onclick="toggleMobileMenu()" class="p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-xl flex items-center gap-3 transition-colors">
-          <i class="fas fa-calendar-alt text-sky-600"></i> جدول الحصص
+        <a href="#schedule" onclick="toggleMobileMenu()" class="flex items-center gap-3 p-4 font-bold text-slate-700 hover:bg-sky-50 rounded-xl">
+          <i class="fas fa-calendar-alt text-sky-600 w-5"></i> جدول الحصص
         </a>
-        <div class="h-px bg-slate-100 my-1 mx-4"></div>
-        <a href="https://wa.me/00970597439818" onclick="toggleMobileMenu()" class="p-4 font-bold text-sky-600 bg-sky-50 rounded-xl text-center m-1">
+        <div class="border-t border-slate-100 my-2 mx-4"></div>
+        <a href="https://wa.me/00970597439818" onclick="toggleMobileMenu()" class="p-4 font-bold text-white bg-sky-600 rounded-xl text-center shadow-md">
           تواصل معنا الآن
         </a>
       </div>
     </div>
-    
+
   </div>
 </nav>
     <header class="max-w-7xl mx-auto px-8 pt-32 pb-16 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-12">
