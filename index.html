@@ -205,7 +205,8 @@
         <div class="h-1.5 w-24 bg-sky-500 rounded-full mb-4 mx-auto md:mx-0"></div>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
         <div class="glass-light p-8 group hover:shadow-2xl transition-all flex flex-col justify-between" data-aos="fade-up">
             <div>
                 <div class="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center mb-6">
@@ -247,8 +248,24 @@
                 <i class="fas fa-arrow-left text-xs"></i>
             </a>
         </div>
+
+        <div class="glass-light p-8 group hover:shadow-2xl transition-all flex flex-col justify-between border-2 border-indigo-100" data-aos="fade-up" data-aos-delay="300">
+            <div>
+                <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-file-alt text-3xl text-indigo-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 text-slate-800">ملخصات+</h3>
+                <p class="text-slate-500 text-sm mb-6 leading-relaxed">شروحات إضافية مبسطة وخرائط ذهنية للمواد الدراسية المعقدة.</p>
+            </div>
+            <a href="summary.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all active:scale-95 shadow-lg shadow-indigo-600/20">
+                عرض الملخصات
+                <i class="fas fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+
     </div>
 </section>
+
 
     <section id="schedule" class="max-w-7xl mx-auto px-4 md:px-8 py-20 my-10 bg-white/50 border-y border-slate-100">
         <div class="mb-12 text-center" data-aos="fade-up">
@@ -285,6 +302,50 @@
             </table>
         </div>
     </section>
+
+    <section id="ask-me" class="max-w-7xl mx-auto px-4 md:px-8 py-16" data-aos="fade-up">
+    <div class="glass-light p-8 md:p-12 border-2 border-sky-100 relative overflow-hidden">
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-sky-100/50 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-100/50 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="md:w-2/3 text-center md:text-right">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-sky-50 text-sky-700 rounded-full text-xs font-black mb-4 border border-sky-100">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                    </span>
+                    خدمة "اسألني" التعليمية
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">هل تواجه صعوبة في فهم درس معين؟</h2>
+                <p class="text-slate-500 text-lg mb-6 leading-relaxed">
+                    لا تقلق! أعضاء اللجنة العلمية متواجدون لمساعدتك. نخصص وقتنا في الفسحة وحصص الفراغ لتبسيط المفاهيم المعقدة وحل المسائل الصعبة بأسلوب "من طالب لطالب".
+                </p>
+                
+                <div class="flex flex-wrap gap-6 justify-center md:justify-start text-sm font-bold text-slate-600">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-clock text-sky-500"></i>
+                        <span>وقت الفسحة وحصص الفراغ</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-sky-500"></i>
+                        <span>داخل الصف (عاشر ب)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/3 w-full">
+                <a href="https://wa.me/00970597439818" class="group flex flex-col items-center justify-center p-8 bg-white border-2 border-slate-100 rounded-[2rem] hover:border-sky-500 transition-all duration-300 shadow-xl shadow-slate-200/50">
+                    <div class="w-16 h-16 bg-sky-600 text-white rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-paper-plane text-2xl"></i>
+                    </div>
+                    <span class="text-xl font-black text-slate-800 mb-1">أرسل سؤالك الآن</span>
+                    <span class="text-slate-400 text-sm font-medium">عبر الواتساب مباشرة</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="max-w-7xl mx-auto px-8 py-24 border-t border-slate-100">
         <div class="flex flex-col md:flex-row items-center gap-16">
@@ -358,6 +419,88 @@
         </div>
     </section>
 
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-16" data-aos="zoom-in">
+    <div class="bg-white border-2 border-amber-100 rounded-[3rem] p-8 md:p-12 shadow-xl shadow-amber-50 relative overflow-hidden text-center">
+        <div class="absolute top-0 right-0 p-10 opacity-10">
+            <i class="fas fa-trophy text-9xl text-amber-500"></i>
+        </div>
+        
+        <h2 class="text-3xl font-black text-slate-800 mb-2">لوحة الشرف - فائزين العاشر ب</h2>
+        <p class="text-slate-500 mb-10 italic">نحتفي باللذين أبدعوا خلال الفصل الأول</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10">
+            <div class="p-6 bg-amber-50 rounded-3xl border-2 border-amber-200 transform hover:scale-105 transition-all">
+                <div class="w-16 h-16 bg-amber-400 text-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-crown text-2xl"></i>
+                </div>
+                <h4 class="font-black text-slate-800">أحمد عبدالجليل</h4>
+                <p class="text-amber-700 text-sm font-bold">بطل تحدي الرياضيات</p>
+            </div>
+
+            <div class="p-6 bg-slate-50 rounded-3xl border-2 border-slate-200 transform hover:scale-105 transition-all">
+                <div class="w-16 h-16 bg-slate-400 text-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-medal text-2xl"></i>
+                </div>
+                <h4 class="font-black text-slate-800">عمرو منصور</h4>
+                <p class="text-slate-600 text-sm font-bold">بطل تحدي لغتي فخري</p>
+            </div>
+
+            <div class="p-6 bg-orange-50 rounded-3xl border-2 border-orange-200 transform hover:scale-105 transition-all">
+                <div class="w-16 h-16 bg-orange-400 text-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-award text-2xl"></i>
+                </div>
+                <h4 class="font-black text-slate-800">جواد عبيد</h4>
+                <p class="text-orange-700 text-sm font-bold">بطل تحدي Verb Tenses</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="countdown-section" class="max-w-7xl mx-auto px-4 md:px-8 py-12" data-aos="fade-up">
+    <div class="bg-slate-900 rounded-[3rem] p-10 shadow-2xl relative overflow-hidden border border-slate-800">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-sky-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-[100px]"></div>
+        
+        <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sky-400 text-xs font-black mb-6 tracking-widest uppercase">
+                <i class="fas fa-trophy"></i> التحدي الأكبر يقترب
+            </div>
+            
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-10">مسابقة <span class="gradient-text">المعرفة العربية</span></h2>
+            
+            <div class="grid grid-cols-4 gap-3 md:gap-8 mb-10">
+                <div class="flex flex-col items-center">
+                    <div id="days" class="w-16 h-16 md:w-28 md:h-28 bg-white/5 border border-white/10 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center text-2xl md:text-5xl font-black text-white shadow-2xl mb-3">00</div>
+                    <span class="text-slate-500 text-[10px] md:text-sm font-bold uppercase tracking-widest">أيام</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="hours" class="w-16 h-16 md:w-28 md:h-28 bg-white/5 border border-white/10 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center text-2xl md:text-5xl font-black text-white shadow-2xl mb-3">00</div>
+                    <span class="text-slate-500 text-[10px] md:text-sm font-bold uppercase tracking-widest">ساعات</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="minutes" class="w-16 h-16 md:w-28 md:h-28 bg-white/5 border border-white/10 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center text-2xl md:text-5xl font-black text-white shadow-2xl mb-3">00</div>
+                    <span class="text-slate-500 text-[10px] md:text-sm font-bold uppercase tracking-widest">دقائق</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="seconds" class="w-16 h-16 md:w-28 md:h-28 bg-sky-600/20 border border-sky-500/30 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center text-2xl md:text-5xl font-black text-sky-400 shadow-2xl mb-3 animate-pulse">00</div>
+                    <span class="text-sky-500 text-[10px] md:text-sm font-bold uppercase tracking-widest">ثواني</span>
+                </div>
+            </div>
+
+            <p class="text-slate-400 font-medium max-w-lg leading-relaxed mb-10">
+                استعدوا للمواجهة الثقافية الكبرى! يوم الأحد، 1 فبراير، تمام الساعة 9:00 صباحاً. هل أنت مستعد لتكون بطل المعرفة؟
+            </p>
+
+            <a href="https://tinyurl.com/ArabKnowledge" target="_blank" class="group relative inline-flex items-center justify-center px-10 py-4 font-black text-white transition-all duration-300 bg-sky-600 rounded-2xl hover:bg-sky-500 hover:shadow-[0_0_30px_rgba(2,132,199,0.5)] active:scale-95">
+                <span class="relative flex items-center gap-2">
+                    انطلق إلى موقع المسابقة
+                    <i class="fas fa-external-link-alt text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
     <section class="max-w-7xl mx-auto px-8 py-24 bg-slate-50/50 rounded-[3rem] mb-20 border border-slate-100">
         <div class="text-center mb-16" data-aos="fade-up">
             <span class="text-sky-600 font-black tracking-widest uppercase text-xs">سجل الفخر</span>
@@ -422,6 +565,37 @@
         <div class="text-2xl font-bold text-slate-800 mb-4">اللجنة العلمية <span class="text-sky-600">للعاشر ب</span></div>
         <p class="text-slate-500 text-sm italic">تم تطوير الموقع بكل فخر لطلابنا &copy; 2026</p>
     </footer>
+
+<script>
+    // تحديد موعد المسابقة: 1 فبراير 2026 الساعة 9:00 صباحاً
+    const competitionDate = new Date("Feb 1, 2026 12:00:00").getTime();
+
+    const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = competitionDate - now;
+
+        // حساب الأيام، الساعات، الدقائق، والثواني
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // عرض النتائج في العناصر المحددة
+        document.getElementById("days").innerHTML = d.toString().padStart(2, '0');
+        document.getElementById("hours").innerHTML = h.toString().padStart(2, '0');
+        document.getElementById("minutes").innerHTML = m.toString().padStart(2, '0');
+        document.getElementById("seconds").innerHTML = s.toString().padStart(2, '0');
+
+        // عند انتهاء الوقت
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown-section").innerHTML = `
+                <div class="bg-sky-600 rounded-[3rem] p-10 text-center text-white font-black text-3xl animate-bounce">
+                    لقد بدأت مسابقة المعرفة العربية الآن! بالتوفيق للجميع 🚀
+                </div>`;
+        }
+    }, 1000);
+</script>
 
     <script>
         const scheduleData = [
