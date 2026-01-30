@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة انطلق | تجربة تعلم استثنائية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0284c7;
+            --accent: #f59e0b;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        /* خلفية فنية ناعمة */
+        .bg-pattern {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.03);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-thumbnail img {
+            transition: transform 0.7s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 80px rgba(2, 132, 199, 0.12);
+            border-color: var(--primary);
+        }
+
+        .glass-card:hover .video-thumbnail img {
+            transform: scale(1.1) rotate(1deg);
+        }
+
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 132, 199, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .floating-btn {
+            background: white;
+            color: var(--primary);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .filter-active {
+            background: var(--primary) !important;
+            color: white !important;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.3);
+        }
+
+        .badge-math { background: #e0f2fe; color: #0369a1; }
+        .badge-physics { background: #fef3c7; color: #92400e; }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="bg-pattern"></div>
+
+    <nav class="sticky top-0 z-50 px-6 py-5 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-sky-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-sky-200">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-slate-800">منصة <span class="text-sky-600">انطلق</span></span>
+            </div>
+            <a href="index.html" class="group flex items-center gap-2 font-bold text-slate-500 hover:text-sky-600 transition-all">
+                <span>العودة للرئيسية</span>
+                <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="max-w-7xl mx-auto px-8 py-20 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-tight">
+                دروسك، بأسلوب <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">أكثر ذكاءً</span>
+            </h2>
+            <p class="text-slate-500 text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium">
+                مكتبة مرئية شاملة لمادتي الرياضيات والفيزياء، مصممة خصيصاً لتناسب احتياجات طلابنا في العاشر ب.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
+            <button onclick="filter('all', this)" class="filter-btn filter-active px-10 py-4 rounded-2xl font-black bg-white border border-slate-100 shadow-sm transition-all">الكل</button>
+            <button onclick="filter('math', this)" class="filter-btn px-10 py-4 rounded-2xl font-black bg-white border border-slate-100 shadow-sm transition-all text-slate-600 hover:border-sky-200 hover:bg-sky-50">الرياضيات</button>
+            <button onclick="filter('physics', this)" class="filter-btn px-10 py-4 rounded-2xl font-black bg-white border border-slate-100 shadow-sm transition-all text-slate-600 hover:border-amber-200 hover:bg-amber-50">الفيزياء</button>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-8 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="video-container">
+            
+            <div class="glass-card p-5 math-card" data-aos="fade-up">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800" alt="Math Lesson" class="w-full h-full object-cover">
+                    <div class="play-overlay">
+                        <div class="floating-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="absolute top-4 right-4 badge-math px-4 py-1.5 rounded-full text-xs font-black">الرياضيات</div>
+                </div>
+                <div class="mt-6 px-2 pb-2">
+                    <h3 class="text-2xl font-black text-slate-800 mb-2">حساب المثلثات</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">فك شفرات الدوال المثلثية والقوانين الأساسية بطريقة لن تنساها أبداً.</p>
+                    <a href="#" class="btn-gradient w-full py-4 rounded-2xl text-white font-black flex items-center justify-center gap-3">
+                        بدء التعلم <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="glass-card p-5 physics-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&q=80&w=800" alt="Physics Lesson" class="w-full h-full object-cover">
+                    <div class="play-overlay">
+                        <div class="floating-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="absolute top-4 right-4 badge-physics px-4 py-1.5 rounded-full text-xs font-black">الفيزياء</div>
+                </div>
+                <div class="mt-6 px-2 pb-2">
+                    <h3 class="text-2xl font-black text-slate-800 mb-2">المتجهات في الفيزياء</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">كيف نحلل القوى في بُعدين؟ شرح تطبيقي باستخدام الرسوم البيانية.</p>
+                    <a href="#" class="btn-gradient w-full py-4 rounded-2xl text-white font-black flex items-center justify-center gap-3">
+                        بدء التعلم <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <footer class="py-20 text-center border-t border-slate-100">
+        <div class="flex items-center justify-center gap-2 text-slate-400 font-bold">
+            <span>صنع بشغف بواسطة اللجنة العلمية</span>
+            <i class="fas fa-heart text-red-500"></i>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function filter(type, btn) {
+            // UI Update
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-active'));
+            btn.classList.add('filter-active');
+
+            // Filtering Logic
+            const math = document.querySelectorAll('.math-card');
+            const physics = document.querySelectorAll('.physics-card');
+
+            if(type === 'all') {
+                math.forEach(el => el.style.display = 'block');
+                physics.forEach(el => el.style.display = 'block');
+            } else if(type === 'math') {
+                math.forEach(el => el.style.display = 'block');
+                physics.forEach(el => el.style.display = 'none');
+            } else {
+                math.forEach(el => el.style.display = 'none');
+                physics.forEach(el => el.style.display = 'block');
+            }
+            AOS.refresh();
+        }
+    </script>
+</body>
+</html>
