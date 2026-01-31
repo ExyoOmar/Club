@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز المسابقات | اللجنة العلمية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            background-color: #0b0f1a; 
+            color: #ffffff;
+            background-image: radial-gradient(circle at 0% 0%, #1e293b 0%, #0b0f1a 50%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 2.5rem;
+        }
+
+        .comp-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .comp-card:hover {
+            transform: translateY(-10px);
+            border-color: #6366f1;
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.2);
+        }
+
+        .icon-box {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b0f1a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <nav class="max-w-7xl mx-auto p-8 flex justify-between items-center relative z-10">
+        <a href="index.html" class="flex items-center gap-2 text-indigo-400 font-bold group hover:text-white transition-all">
+            <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+            العودة للرئيسية
+        </a>
+        <div class="glass-panel px-6 py-2 flex items-center gap-4 border-indigo-500/20">
+            <span class="text-xs font-black tracking-widest text-indigo-400 uppercase">اللجنة العلمية للعاشر (ب)</span>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 mt-10">
+        
+        <header class="text-center mb-20" data-aos="zoom-in">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 neon-text">
+                ساحة <span class="text-transparent bg-clip-text bg-gradient-to-l from-indigo-400 to-purple-400">التحديات</span>
+            </h1>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto font-medium">
+                جميع مسابقات الفصل الدراسي الثاني للصف العاشر (ب) والصفوف الأخرى في مكان واحد.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="comp-card p-8 group" data-aos="fade-up">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg">🌍</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">1 Feb</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-indigo-400 transition-colors">الوطن العربي</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">مسابقة مدرسية ثقافية كبرى عن تاريخ وجغرافية العالم العربي.</p>
+                    <div class="mt-auto">
+                        <span class="text-[10px] font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-lg">مكتملة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg">🧬</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">10 Feb</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-indigo-400 transition-colors">أجهزة الإنسان</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">تحدي مادة الأحياء في دروس أجهزة جسم الإنسان المختلفة لطلاب الصف العاشر ب</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-[10px] font-bold text-indigo-400 bg-indigo-400/10 px-3 py-1 rounded-lg animate-pulse">قيد الاعداد..</span>
+                        <i class="fas fa-arrow-left text-xs text-indigo-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group border-t-2 border-t-emerald-500/30" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg !from-emerald-500 !to-teal-600">🌙</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">22 Feb</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-emerald-400 transition-colors">مسابقة رمضانية</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">مسابقة روحانية وثقافية يتم الاتفاق على تفاصيلها قريباً لمختلف الصفوف</p>
+                    <div class="mt-auto text-xs text-slate-500 font-bold italic">انتظروا الإعلان..</div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-black">ض</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">8 Mar</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-indigo-400 transition-colors">لغتي فخري 2</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">مسابقة اللغة العربية باسم "لغتي فخري" في نسختها الثانية لطلاب العاشر (ب)</p>
+                    <div class="mt-auto"><i class="fas fa-lock text-slate-700 text-xs"></i></div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group" data-aos="fade-up">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl">🇬🇧</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">15 Mar</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-indigo-400 transition-colors">اللغة الإنجليزية</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">مسابقة مخصصة لقواعد الـ Passive/Active في اللغة الإنجليزية. لطلاب العاشر ب</p>
+                    <div class="mt-auto"><i class="fas fa-lock text-slate-700 text-xs"></i></div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl">🍎</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">1 Apr</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-indigo-400 transition-colors">الفيزياء</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">تحدي علمي في دروس الحرارة وغيرها من دروس المادة. لطلاب العاشر</p>
+                    <div class="mt-auto"><i class="fas fa-lock text-slate-700 text-xs"></i></div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg !from-amber-500 !to-orange-600">📜</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">8 Apr</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-amber-400 transition-colors">جغرافيا وتاريخ</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">مسابقة شاملة في دروس التاريخ المقررة لطلاب العاشر ب</p>
+                    <div class="mt-auto"><i class="fas fa-lock text-slate-700 text-xs"></i></div>
+                </div>
+            </div>
+
+            <div class="comp-card p-8 group" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-10">
+                        <div class="icon-box w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-lg !from-green-500 !to-emerald-600">🕌</div>
+                        <span class="text-[10px] font-black bg-white/10 px-3 py-1 rounded-full text-slate-400 uppercase">12 Apr</span>
+                    </div>
+                    <h3 class="text-2xl font-black mb-2 group-hover:text-green-400 transition-colors">التربية الإسلامية</h3>
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed">مسابقة في دروس الدين المختلفة المقررة لهذا الفصل لطلاب العاشر ب</p>
+                    <div class="mt-auto"><i class="fas fa-lock text-slate-700 text-xs"></i></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
