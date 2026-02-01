@@ -34,6 +34,24 @@
             font-weight: 800;
             border: 1px solid #d1fae5;
         }
+
+        /* تنسيق إضافي لقسم أضيف حديثاً */
+        .recent-card {
+            background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .recent-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -51,7 +69,7 @@
         </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto px-6 py-16 text-center" data-aos="zoom-out">
+    <header class="max-w-4xl mx-auto px-6 py-12 text-center" data-aos="zoom-out">
         <h1 class="text-5xl md:text-6xl font-black text-slate-900 mb-6">دليل <span class="text-emerald-600">الإجابات</span></h1>
         <p class="text-slate-500 text-lg font-medium leading-relaxed max-w-2xl mx-auto">
             تجد هنا حلول الكتاب الوزاري المعتمدة، إجابات أوراق العمل، وتصحيح الواجبات اليومية لكافة المواد الدراسية.
@@ -59,161 +77,344 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-6 pb-32">
-        <div class="flex flex-col gap-5">
+        
+        <section class="mb-12" data-aos="fade-up">
+            <div class="flex items-center gap-2 mb-4 px-2">
+                <i class="fas fa-bolt text-amber-500"></i>
+                <h2 class="text-xl font-extrabold text-slate-800">أضيف حديثاً</h2>
+            </div>
+            
+            <div class="recent-card p-6 text-white shadow-xl shadow-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-5">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg leading-tight">حل واجب الاتزان الحراري الخارجي</h4>
+                        <p class="text-emerald-50 text-sm opacity-90">مادة الفيزياء - الوحدة الثانية</p>
+                    </div>
+                </div>
+                <a href="https://drive.google.com/file/d/1GqpPpwSmlEc9rnJbE9iVXBOwb4fTCSlq/view?usp=sharing" class="bg-white text-emerald-700 px-6 py-2 rounded-full font-bold text-sm hover:bg-emerald-50 transition-colors shadow-sm">
+                    عرض الحل الآن
+                </a>
+            </div>
+        </section>
+
+        <hr class="mb-10 border-slate-200">
+
+          <div class="flex flex-col gap-5">
+
+
 
             <a href="https://drive.google.com/drive/folders/1tMKOHdu80awHFJ6KI13mfivuOKOGzwLU?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-book-quran"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">التربية الإسلامية</h3>
+
                             <span class="check-badge">قيد التحديث</span>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">أحكام التجويد، تلخيص الأحاديث، وشروحات السور المقررة.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/1VLxfNwmGBDwhbHGL5VaLrAPs7lykBq0c?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-feather-pointed"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">اللغة العربية</h3>
+
                             <span class="check-badge">شامل</span>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">قواعد النحو، تحليل النصوص الأدبية، ومهارات البلاغة.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/11qUy969Sai6eutqd6BhrtP0tR3Ha90rf?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-spell-check"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">اللغة الإنجليزية</h3>
+
                         </div>
+
                         <p class="text-slate-400 text-sm italic">Vocabulary bank, Grammar sheets, and Literature summaries.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/1gmuvFG5eET4xp7xo8i86CxejjsPlNREw?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-map-location-dot"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors leading-tight">جغرافية فلسطين وتاريخها</h3>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">خرائط تفصيلية، أحداث تاريخية، ودراسات سكانية وطنية.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/1T-82-qSGHkzgiZxH7MxIMPSEoJltSAnd?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-infinity"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">الرياضيات</h3>
+
                             <span class="check-badge">جديد</span>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">الاقترانات المثلثية والنسب المثلثية وقياس الزوايا وغيرها.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/127c99MLrSmVoGbkk6MSw_LRuKp27dbvI?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-atom"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">الفيزياء</h3>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">الحرارة بمختلف عناصرها وغيره من الدروس.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/1Zc8Nexwqj8-yI1J9ajThkiTOlLXjRdhr?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-vials"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">الكيمياء</h3>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">الكيمياء العضوية والكربون وغيره من الدروس.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/18Cued5oZPq0bpYF_abamlgxOKg4VhORi?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-dna"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">الأحياء</h3>
+
                             <span class="check-badge">رسومات</span>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">شروحات مختلف أجهزة جسم الانسان.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
+
+
 
             <a href="https://drive.google.com/drive/folders/1M2VPQwkOzi-AK5g8bPOZfOxYlS3dYwv4?usp=sharing" target="_blank" class="solution-bar p-6 flex items-center justify-between group" data-aos="fade-up">
+
                 <div class="flex items-center gap-6">
+
                     <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm">
+
                         <i class="fas fa-microchip"></i>
+
                     </div>
+
                     <div>
+
                         <div class="flex items-center gap-3 mb-1">
+
                             <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-emerald-700 transition-colors">التكنولوجيا</h3>
+
                         </div>
+
                         <p class="text-slate-400 text-sm">شروحات الاتصال اللاسلكي والسلكي وغيره من الدروس.</p>
+
                     </div>
+
                 </div>
+
                 <i class="fas fa-chevron-left text-slate-300 group-hover:text-emerald-500 group-hover:-translate-x-2 transition-all"></i>
+
             </a>
 
+
+
         </div>
+
+
 
         <div class="mt-16 bg-white border border-slate-100 p-8 rounded-[32px] text-center">
+
             <i class="fas fa-info-circle text-emerald-500 mb-4 text-2xl"></i>
+
             <p class="text-slate-600 font-medium">هل وجدت خطأ في أحد الحلول؟</p>
+
             <p class="text-slate-400 text-sm mb-0">يرجى التواصل مع اللجنة العلمية لتصحيح الملف فوراً.</p>
+
         </div>
 
+
+
         <footer class="mt-20 text-center text-slate-400 text-sm">
+
             <p>جميع الحلول المقدمة خاضعة للمراجعة العلمية © 2026</p>
+
         </footer>
+
     </main>
 
+
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>AOS.init({ duration: 800, once: true });</script>
+
 </body>
+
 </html>
+
