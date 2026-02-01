@@ -41,7 +41,6 @@
             background: radial-gradient(circle at top right, #eef2ff, #f8fafc);
         }
 
-        /* تحسين مظهر أزرار المواد */
         .subject-filter {
             transition: all 0.2s;
             cursor: pointer;
@@ -52,6 +51,16 @@
         }
 
         .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        .new-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body class="min-h-screen bg-soft-gradient">
@@ -72,7 +81,7 @@
         </div>
     </nav>
 
-    <header class="max-w-7xl mx-auto px-8 pt-32 pb-12 text-center">
+    <header class="max-w-7xl mx-auto px-8 pt-32 pb-8 text-center">
         <div data-aos="zoom-in">
             <span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-black mb-4 inline-block border border-indigo-100 italic">
                شروحات مبسطة يتم تدقيقها أول بأول
@@ -80,26 +89,91 @@
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
                 قسم <span class="gradient-text">ملخصات +</span>
             </h1>
-            <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-                هنا نضع بين يديك زبدة المواد الدراسية، ملخصة بأسلوب بصري حديث يساعدك على الحفظ والفهم السريع.
-            </p>
         </div>
     </header>
+
+    <section class="max-w-7xl mx-auto px-8 mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-2 h-8 bg-indigo-600 rounded-full"></div>
+            <h2 class="text-2xl font-extrabold text-slate-800">أُضيف حديثاً ✨</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-slate-900 rounded-3xl p-1 shadow-xl">
+                <div class="bg-white rounded-[20px] p-5 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-800 text-2xl">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-white bg-indigo-600 px-2 py-0.5 rounded-md">التكنولوجيا</span>
+                            <h3 class="font-bold text-slate-800">ملخص الاتصالات اللاسلكية</h3>
+                        </div>
+                    </div>
+                    <a href="Wireless.pdf" class="bg-indigo-600 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-slate-900 transition-all">تحميل</a>
+                </div>
+            </div>
+
+            <div class="bg-emerald-500 rounded-3xl p-1 shadow-xl">
+                <div class="bg-white rounded-[20px] p-5 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 text-2xl">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-md">التربية الإسلامية</span>
+                            <h3 class="font-bold text-slate-800">ملخص سورة مريم (1)</h3>
+                        </div>
+                    </div>
+                    <a href="Maryam.pdf" class="bg-emerald-500 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-slate-900 transition-all">تحميل</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="max-w-7xl mx-auto border-slate-200 mb-12 mx-8">
 
     <section class="max-w-7xl mx-auto px-8 mb-12">
         <div class="flex overflow-x-auto pb-4 gap-3 no-scrollbar" data-aos="fade-up">
             <button class="subject-filter px-6 py-3 rounded-2xl bg-indigo-600 text-white font-bold shadow-lg whitespace-nowrap">الكل</button>
-            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">الفيزياء</button>
-            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">الكيمياء</button>
-            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">الأحياء</button>
-            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">الرياضيات</button>
+            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">التكنولوجيا</button>
+            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">التربية الإسلامية</button>
             <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">اللغة العربية</button>
+            <button class="subject-filter px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-600 font-bold hover:border-indigo-400 whitespace-nowrap">اللغة الإنجليزية</button>
         </div>
     </section>
 
     <main class="max-w-7xl mx-auto px-8 pb-24">
         <div id="summaries-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
+            <div class="glass-card p-6 flex flex-col h-full summary-item" data-category="التكنولوجيا" data-aos="fade-up">
+                <div class="relative mb-6 overflow-hidden rounded-2xl aspect-video bg-indigo-50 flex items-center justify-center">
+                    <i class="fas fa-tower-cell text-5xl text-indigo-200"></i>
+                    <span class="absolute top-3 right-3 bg-slate-800 text-white text-[10px] px-3 py-1 rounded-full font-bold">التكنولوجيا</span>
+                    <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-bold new-badge">جديد</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">درس الاتصالات اللاسلكية</h3>
+                <p class="text-slate-500 text-sm mb-6 flex-grow">شرح شامل لأنواع الشبكات اللاسلكية، موجات الراديو، وكيفية عمل أبراج الاتصالات الحديثة.</p>
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                    <span class="text-xs text-slate-400 font-medium"><i class="far fa-calendar-alt ml-1"></i> 2026/02/01</span>
+                    <a href="Wireless.pdf" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-600 transition-colors">تحميل PDF</a>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col h-full summary-item" data-category="التربية الإسلامية" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative mb-6 overflow-hidden rounded-2xl aspect-video bg-emerald-50 flex items-center justify-center">
+                    <i class="fas fa-book-quran text-5xl text-emerald-200"></i>
+                    <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] px-3 py-1 rounded-full font-bold">التربية الإسلامية</span>
+                    <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] px-3 py-1 rounded-full font-bold new-badge">جديد</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">سورة مريم (1)</h3>
+                <p class="text-slate-500 text-sm mb-6 flex-grow">ملخص تفسير الآيات وتوضيح المعاني والأحكام الواردة في مطلع سورة مريم المباركة.</p>
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                    <span class="text-xs text-slate-400 font-medium"><i class="far fa-calendar-alt ml-1"></i> 2026/02/01</span>
+                    <a href="Maryam.pdf" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-emerald-600 transition-colors">تحميل PDF</a>
+                </div>
+            </div>
+
             <div class="glass-card p-6 flex flex-col h-full summary-item" data-category="اللغة الإنجليزية" data-aos="fade-up">
                 <div class="relative mb-6 overflow-hidden rounded-2xl aspect-video bg-blue-50 flex items-center justify-center">
                     <i class="fas fa-language text-5xl text-blue-200"></i>
@@ -113,20 +187,20 @@
                 </div>
             </div>
 
-            <div class="glass-card p-6 flex flex-col h-full summary-item" data-category="اللغة العربية" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card p-6 flex flex-col h-full summary-item" data-category="اللغة العربية" data-aos="fade-up">
                 <div class="relative mb-6 overflow-hidden rounded-2xl aspect-video bg-red-50 flex items-center justify-center">
                     <i class="fas fa-pen-fancy text-5xl text-red-200"></i>
                     <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] px-3 py-1 rounded-full font-bold">اللغة العربية</span>
                 </div>
-                <h3 class="text-xl font-bold text-slate-800 mb-2">قاعدة الاستثناء + (الخبر والإنشاء)</h3>
-                <p class="text-slate-500 text-sm mb-6 flex-grow">ملخص شامل لأسلوب الاستثناء (إلا، غير، سوى) وتوضيح الفرق بين الجمل الخبرية والجمل الإنشائية في البلاغة.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">قاعدة الاستثناء</h3>
+                <p class="text-slate-500 text-sm mb-6 flex-grow">ملخص شامل لأسلوب الاستثناء (إلا، غير، سوى) وتوضيح الفرق بين الجمل الخبرية والإنشائية.</p>
                 <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
                     <span class="text-xs text-slate-400 font-medium"><i class="far fa-calendar-alt ml-1"></i> 2026/01/29</span>
                     <a href="Arabic1.pdf" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-600 transition-colors">تحميل PDF</a>
                 </div>
             </div>
 
-            </div>
+        </div>
 
         <div id="no-results" class="hidden mt-20 text-center py-20 border-2 border-dashed border-slate-200 rounded-[3rem]">
             <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -152,7 +226,6 @@
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // تغيير شكل الزر النشط
                 filterBtns.forEach(b => {
                     b.classList.remove('bg-indigo-600', 'text-white', 'shadow-lg');
                     b.classList.add('bg-white', 'border-slate-200', 'text-slate-600');
@@ -163,7 +236,6 @@
                 const category = btn.innerText.trim();
                 let hasItems = false;
 
-                // منطق الفلترة
                 items.forEach(item => {
                     if (category === 'الكل' || item.getAttribute('data-category') === category) {
                         item.style.display = 'flex';
@@ -173,7 +245,6 @@
                     }
                 });
 
-                // إظهار رسالة "لا توجد نتائج" إذا كانت المادة فارغة
                 if (hasItems) {
                     noResults.classList.add('hidden');
                 } else {
