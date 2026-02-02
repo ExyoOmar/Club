@@ -79,24 +79,46 @@
     <main class="max-w-4xl mx-auto px-6 pb-32">
         
         <section class="mb-12" data-aos="fade-up">
-            <div class="flex items-center gap-2 mb-4 px-2">
-                <i class="fas fa-bolt text-amber-500"></i>
+            <div class="flex items-center gap-2 mb-6 px-2">
+                <div class="relative">
+                    <i class="fas fa-bolt text-amber-500 animate-pulse"></i>
+                    <span class="absolute top-0 right-0 h-2 w-2 bg-amber-400 rounded-full animate-ping"></span>
+                </div>
                 <h2 class="text-xl font-extrabold text-slate-800">أضيف حديثاً</h2>
             </div>
             
-            <div class="recent-card p-6 text-white shadow-xl shadow-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-5">
-                    <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-file-signature"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="recent-card p-6 text-white shadow-xl shadow-emerald-100 flex flex-col justify-between group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-square-root-variable"></i>
+                        </div>
+                        <span class="bg-white/20 text-[10px] px-2 py-1 rounded-md uppercase tracking-wider font-bold">Math</span>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg leading-tight">حل واجب الاتزان الحراري للفيزياء صفحة 94</h4>
-                        <p class="text-emerald-50 text-sm opacity-90">مادة الفيزياء - الوحدة الثانية</p>
+                        <h4 class="font-bold text-lg leading-tight mb-1">واجب الرياضيات الإثرائي</h4>
+                        <p class="text-emerald-50 text-xs opacity-80 mb-4">تمارين إضافية لتعزيز الفهم المتقدم</p>
+                        <a href="https://drive.google.com/file/d/1dLhRlnlTF-weEv5LKmZGVTO0bQLVdLPL/view?usp=drive_link" target="_blank" class="block text-center bg-white text-emerald-700 py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-50 transition-all shadow-sm">
+                            <i class="fas fa-download ml-2 text-xs"></i> عرض الحل الآن
+                        </a>
                     </div>
                 </div>
-                <a href="https://drive.google.com/file/d/1U53s2pyqFXQpS0LNRo8HbOJo_MWMIrgB/view?" target="_blank" class="bg-white text-emerald-700 px-6 py-2 rounded-full font-bold text-sm hover:bg-emerald-50 transition-colors shadow-sm">
-                    عرض الحل الآن
-                </a>
+
+                <div class="recent-card p-6 text-white shadow-xl shadow-emerald-100 flex flex-col justify-between group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <i class="fas fa-temperature-half"></i>
+                        </div>
+                        <span class="bg-white/20 text-[10px] px-2 py-1 rounded-md uppercase tracking-wider font-bold">Physics</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg leading-tight mb-1">حل واجب الاتزان الحراري</h4>
+                        <p class="text-emerald-50 text-xs opacity-80 mb-4">فيزياء صفحة 94 - الوحدة الثانية</p>
+                        <a href="https://drive.google.com/file/d/1U53s2pyqFXQpS0LNRo8HbOJo_MWMIrgB/view?" target="_blank" class="block text-center bg-white text-emerald-700 py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-50 transition-all shadow-sm">
+                            <i class="fas fa-eye ml-2 text-xs"></i> عرض الحل الآن
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
